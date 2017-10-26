@@ -55,10 +55,87 @@ ggplot(data = mpg) +
    geom_point(mapping = aes(x = displ, y = hwy), color = "blue")
 ```
 
+#### Why all dots are not blue?
+```{r}
+ggplot(data = mpg) +
+   geom_point(mapping = aes(x = displ, y = hwy, color = "blue"))
+```
+
+```{r}
+mpg
+```
+
+```{r}
+ggplot(data = mpg) +
+   geom_point(mapping = aes(x = displ, y = hwy, color = year))
+```
 
 
+```{r}
+ggplot(data = mpg) +
+   geom_point(mapping = aes(x = displ, y = hwy, size = year))
+```
+
+```{r}
+ggplot(data = mpg) +
+   geom_point(mapping = aes(x = displ, y = hwy, shape = year))
+```
+
+```{r}
+ggplot(data = mpg) +
+   geom_point(mapping = aes(x = displ, y = hwy, color = year, size = year))
+```
 
 
+```{r}
+?geom_point
+```
+```{r}
+ggplot(data = mpg) +
+   geom_point(mapping = aes(x = displ, y = hwy, stroke = class))
+```
+
+```{r}
+ggplot(data = mpg) +
+   geom_point(mapping = aes(color = year)) +
+   geom_point(mapping = aes(x = displ, y = hwy))
+```
+
+```{r}
+ggplot(data = mpg) +
+   geom_point(mapping = aes(x = displ, y = hwy)) +
+   facet_wrap(~ class, nrow = 2)
+```
+
+```{r}
+ggplot(data = mpg) +
+   geom_point(mapping = aes(x = displ, y = hwy)) +
+   facet_grid(drv ~ cyl)
+```
+
+```{r}
+ggplot(data = mpg) +
+   geom_point(mapping = aes(x = displ, y = hwy)) +
+   facet_grid(. ~ cyl)
+```
+
+#### continuous value
+```{r}
+ggplot(data = mpg) +
+   geom_point(mapping = aes(x = displ, y = hwy)) +
+   facet_wrap(~ cty)
+```
+
+```{r}
+ggplot(data = mpg) +
+   geom_point(mapping = aes(x = drv, y = cyl))
+```
+
+```{r}
+ggplot(data = mpg) +
+   geom_point(mapping = aes(x = displ, y = hwy)) +
+   facet_grid(drv ~ .)
+```
 
 
 
