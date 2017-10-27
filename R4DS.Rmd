@@ -91,15 +91,16 @@ ggplot(data = mpg) +
 ?geom_point
 ```
 ```{r}
-ggplot(data = mpg) +
-   geom_point(mapping = aes(x = displ, y = hwy, stroke = class))
+# ggplot(data = mpg) +
+#    geom_point(mapping = aes(x = displ, y = hwy, stroke = class))
 ```
 
 ```{r}
 ggplot(data = mpg) +
-   geom_point(mapping = aes(color = year)) +
-   geom_point(mapping = aes(x = displ, y = hwy))
+   geom_point(mapping = aes(x = displ, y = hwy)) +
+   geom_point(mapping = aes(x = displ, y = hwy, color = year))
 ```
+
 
 ```{r}
 ggplot(data = mpg) +
@@ -238,6 +239,90 @@ ggplot(data = mpg, mapping = aes(x = displ, y = hwy)) +
    geom_point(size = 6, color = "white") +
    geom_point(mapping = aes(color = drv))
 ```
+
+### 1.7
+```{r}
+diamonds   
+```
+
+
+```{r}
+ggplot(data = diamonds) +
+   geom_bar(mapping = aes(x = cut))
+```
+
+```{r}
+?geom_bar
+```
+
+```{r}
+ggplot(data = diamonds) +
+   geom_bar(mapping = aes(x = cut))
+ggplot(data = diamonds) +
+   stat_count(mapping = aes(x = cut))
+```
+
+```{r}
+ggplot(data = diamonds) +
+   geom_bar(mapping = aes(x = cut, y = ..prop.., group = 1))
+```
+
+```{r}
+ggplot(data = diamonds) +
+   stat_summary(
+      mapping = aes(x = cut, y = depth),
+      fun.ymin = min,
+      fun.ymax = max,
+      fun.y = median
+   )
+```
+
+```{r}
+?stat_summary
+```
+
+```{r}
+# ggplot(data = diamonds) +
+#    geom_pointrange(
+#       mapping = aes(x = cut, y = median(depth), ymin = min(depth), 
+#                     ymax = max(depth)), group = cut)
+```
+
+```{r}
+?geom_col
+```
+
+```{r}
+ggplot(data = diamonds) +
+   geom_col(mapping = aes(x = cut, y = price))
+```
+
+```{r}
+ggplot(data = diamonds) +
+   geom_bar(mapping = aes(x = cut, y = ..prop..))
+ggplot(data = diamonds) +
+   geom_bar(mapping = aes(x = cut, fill = color, y = ..prop..), 
+            show.legend = F)
+```
+
+
+
+### 1.8
+### 1.9
+### 1.10
+## 2
+### 2.1
+### 2.2
+### 2.3
+
+
+
+
+
+
+
+
+
 
 
 
